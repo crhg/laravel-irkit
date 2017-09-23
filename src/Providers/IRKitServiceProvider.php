@@ -9,6 +9,8 @@
 namespace Crhg\LaravelIRKit\Providers;
 
 use Crhg\IRKit\Client;
+use Crhg\LaravelIRKit\Console\Commands\MessagesCommand;
+use Crhg\LaravelIRKit\Console\Commands\SendCommand;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
@@ -23,9 +25,16 @@ class IRKitServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->publishes([
-            __DIR__.'/../config/irkit.php' => config_path('irkit.php');
-        ])
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/irkit.php' => config_path('irkit.php'),
+            ]);
+
+            $this->commands([
+                MessagesCommand::class,
+                SendCommand::class,
+            ]);
+        }
     }
 
     /**

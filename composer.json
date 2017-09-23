@@ -16,7 +16,9 @@
     ],
     "require": {
         "crhg/irkit-client": "master@dev",
-        "illuminate/support": "^5.5"
+        "illuminate/support": "^5.5",
+        "illuminate/console": "^5.5",
+        "illuminate/http": "^5.5"
     },
     "autoload": {
         "psr-4": {
