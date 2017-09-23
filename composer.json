@@ -1,0 +1,36 @@
+{
+    "name": "crhg/laravel-irkit",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Manabu Matsui",
+            "email": "manabu.matsui@gmail.com"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/crhg/irkit-client"
+        }
+    ],
+    "require": {
+        "crhg/irkit-client": "master@dev",
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Crhg\\LaravelIRKit\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Crhg\\LaravelIRKit\\Providers\\IRKitServiceProvider"
+            ],
+            "aliases": {
+                "IRKit": "Crhg\\LaravelIRKit\\Facade\\IRKit"
+            }
+        }
+    }
+}
