@@ -14,14 +14,14 @@ use Illuminate\Console\Command;
 
 class SendCommand extends Command
 {
-    protected $signature = 'irkit:send {accessory} {command}';
+    protected $signature = 'irkit:send {accessory_name} {command_name}';
 
     protected $description = 'send a command to accessory';
 
     public function handle()
     {
-        $accessory = $this->argument('accessory');
-        $command = $this->argument('command');
-        IRKit::send($accessory, $command);
+        $accessory_name = $this->argument('accessory_name');
+        $command_name = $this->argument('command_name');
+        IRKit::send($accessory_name, $command_name);
     }
 }
