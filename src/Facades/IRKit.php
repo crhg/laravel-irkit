@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Facade;
  * @package Crhg\LaravelIRKit\Facades
  *
  * @method static void send(string $accessory_name, string $command_name)
- * @method static \Illuminate\Http\Response messages(string $host_name)
+ * @method static \GuzzleHttp\Psr7\Response messages(string $host_name)
  */
 class IRKit extends Facade
 {
