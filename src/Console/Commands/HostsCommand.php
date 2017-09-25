@@ -27,9 +27,7 @@ class HostsCommand extends Command
             ->map(function ($e, $name) {
                 return [$name, $e['uri']];
             })
-            ->sort(function ($x, $y) {
-                return $x[0] < $y[0];
-            });
+            ->sortBy(0);
 
         $this->table($headers, $rows);
     }

@@ -32,12 +32,17 @@ class AccessoriesCommand extends Command
                 ];
             })
             ->sort(function ($x, $y) {
-                return ($x['host'] == $y['host']) ? ($x['name'] < $y['name']) : ($x['host'] < $y['host']);
+                return self::cmp($x['host'], $y['host']) || self::cmp($x['name'], $y['name']);
             })
             ->map(function ($e) {
                 return [$e['name'], $e['host'], $e['commands']];
             });
 
         $this->table($headers, $rows);
+    }
+
+    private static function cmp($x, $y)
+    {
+        return ($x == $y)? 0: ($x < $y)? -1: +1;
     }
 }
