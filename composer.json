@@ -8,14 +8,8 @@
             "email": "manabu.matsui@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/crhg/irkit-client"
-        }
-    ],
     "require": {
-        "crhg/irkit-client": "master@dev",
+        "crhg/irkit-client": "^1.0",
         "illuminate/support": "^5.5",
         "illuminate/console": "^5.5",
         "illuminate/http": "^5.5"
